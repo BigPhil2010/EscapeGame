@@ -1,2 +1,1 @@
 # EscapeGame
-Nigger.exe
