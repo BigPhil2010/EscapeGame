@@ -32,6 +32,6 @@ html, body {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     transition: opacity 0.5s;
 }
-.hiden {
+.hidden {
     opacity: 0;
 }

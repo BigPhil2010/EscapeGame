@@ -1,6 +1,3 @@
-function hideTilemap(){
-    
-}
-function showTilemap(){
-    
+function toggleTilemap(){
+    document.getElementById("gameTilemap").classList.toggle("hidden");
 }
