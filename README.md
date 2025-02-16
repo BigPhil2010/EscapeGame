@@ -22,3 +22,43 @@ Eine letzte Notiz auf der letzten Seite ließ uns schaudern:
 "Wer das Buch öffnet, hat das Spiel begonnen. Der Weg zurück in die Ruine steht jederzeit offen … wenn du dich traust."
 
 
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspect Ratio Div</title>
+    <style>
+        .aspect-ratio-box {
+            width: 100vw; /* Verwendung des gesamten verfügbaren Viewport-Bereichs */
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            width: 100%;
+            height: 100%;
+            max-width: 133.33vh; /* 4/3 = 1.333... */
+            max-height: 75vw; /* 3/4 = 0.75 */
+        }
+
+        .resizeable-div {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="aspect-ratio-box">
+        <div class="content">
+            <!-- Dein Inhalt hier, z.B. ein Bild oder Video -->
+            <img class="resizeable-div" src="dein-bild.jpg" alt="Bildbeschreibung">
+        </div>
+    </div>
+</body>
+</html>
