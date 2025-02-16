@@ -1,3 +1,7 @@
+html, body {
+    padding: 0;
+}
+
 .full_screen {
     width: 100vw;
     height: 100vh;
