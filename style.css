@@ -21,7 +21,8 @@ html, body {
     max-height: 75vw;
     background-color: pink;
 }
-canvas {
+.gameTilemap {
     height: 100%;
     background-color: blue;
+    display: grid;
 }
