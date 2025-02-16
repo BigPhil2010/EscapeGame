@@ -7,4 +7,5 @@ html, body{
 }
 .screen{
     background-color: aqua;
+    padding-top: 75%;
 }
