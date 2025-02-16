@@ -8,4 +8,5 @@ html, body{
 .screen{
     background-color: aqua;
     aspect-ratio: 4/3;
+    height: 50vh;
 }
