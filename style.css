@@ -8,5 +8,5 @@ html, body{
 .screen{
     background-color: aqua;
     aspect-ratio: 4/3;
-    object-fit: cover;
+    object-fit: contain;
 }
