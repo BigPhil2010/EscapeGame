@@ -21,6 +21,10 @@ html, body {
     max-height: 75vw;
     background-color: pink;
 }
+
+.tile {
+    height: 100%;
+}
 .gameTilemap {
     height: 100%;
     background-color: blue;
