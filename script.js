@@ -1,0 +1,6 @@
+function hideTilemap(){
+    
+}
+function showTilemap(){
+    
+}

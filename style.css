@@ -19,7 +19,7 @@ html, body {
     height: 100%;
     max-width: 133.33vh;
     max-height: 75vw;
-    background-color: pink;
+    background-color: black;
 }
 
 .tile {
@@ -27,8 +27,11 @@ html, body {
 }
 .gameTilemap {
     height: 100%;
-    background-color: blue;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    transition: opacity 0.5s;
+}
+.hiden {
+    opacity: 0;
 }
