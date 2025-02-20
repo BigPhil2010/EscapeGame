@@ -1,15 +1,40 @@
-function toggleTilemap(mapName) {
-    let tilemap = document.getElementById("gameTilemap");
+function toggleTilemap(mapArray) {
+    let tilemapContainer = document.getElementById("gameTilemap");
     
-    if (!tilemap) {
+    if (!tilemapContainer) {
         console.error("Element mit ID 'gameTilemap' nicht gefunden.");
         return;
     }
     
-    // Falls die Karte versteckt ist, lad das neue Bild und ZEig an
-    if (tilemap.classList.contains("hidden")) {
-        tilemap.src = `maps/${mapName}.png`; // Passe den Pfad an , wenn nötig
-    }
+    tilemapContainer.innerHTML = ""; // mach tile map von davor leer
     
-    tilemap.classList.toggle("hidden");
+    for (let row of mapArray) {
+        let rowDiv = document.createElement("div");
+        rowDiv.style.display = "flex";
+        
+        for (let tile of row) {
+            let img = document.createElement("img");
+            img.src = `tiles/${tile}.png`; // Passe Pfad an 
+            img.style.width = "32px";
+            img.style.height = "32px";
+            rowDiv.appendChild(img);
+        }
+        
+        tilemapContainer.appendChild(rowDiv);
+    }
+}
+
+// Beispiel-Tilemap 16 mal 12
+let mapData = [
+    [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
+    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+    [1,0,2,2,2,0,0,0,0,0,2,2,2,0,0,1],
+    [1,0,2,0,2,0,0,0,0,0,2,0,2,0,0,1],
+    [1,0,2,2,2,0,0,0,0,0,2,2,2,0,0,1],
+    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
+    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]
+];
+
+function loadLevel() {
+    toggleTilemap(mapData);
 }
