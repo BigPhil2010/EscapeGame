@@ -19,5 +19,5 @@ let mapData = [
 ];
 
 function loadLevel(data) {
-    alert(mapData[0])
+    alert(mapData[0]);
 }
