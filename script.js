@@ -32,7 +32,6 @@ function loadLevel(data) {
                     let tile = mapData[y][x]
                     document.getElementById(y+"/"+x).src = pathData[tile]
                     //console.log(toString(y).concat("/".concat(toString(x))))
-                    //console.log(y+"/"+x)
                 }
             }
         }
