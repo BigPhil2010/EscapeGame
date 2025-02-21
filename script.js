@@ -28,7 +28,7 @@ function loadLevel(data) {
     if(mapData.length == 12){
         if(mapData[0].length==16 && mapData[1].length==16 && mapData[2].length==16 && mapData[3].length==16 && mapData[4].length==16 && mapData[5].length==16 && mapData[6].length==16 && mapData[7].length==16 && mapData[8].length==16 && mapData[9].length==16 && mapData[10].length==16 && mapData[11].length==16){
             for (let i = 0; i < mapData.length;  i++){
-                print(mapData[i])
+                alert(mapData[i])
             }
         }
     }
