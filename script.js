@@ -27,9 +27,10 @@ let mapData = [
 function loadLevel(data) {
     if(mapData.length == 12){
         if(mapData[0].length==16 && mapData[1].length==16 && mapData[2].length==16 && mapData[3].length==16 && mapData[4].length==16 && mapData[5].length==16 && mapData[6].length==16 && mapData[7].length==16 && mapData[8].length==16 && mapData[9].length==16 && mapData[10].length==16 && mapData[11].length==16){
-            for (let x = 0; x < mapData.length;  x++){
-                for (let y = 0; y < mapData[x].length; y++){
-                    console.log(mapData[x][y])
+            for (let y = 0; y < mapData.length;  y++){
+                for (let x = 0; x < mapData[y].length; x++){
+                    let tile = mapData[y][x]
+                    document.getElementById(toString(y).concat("/".concat(toString(x)))).src = pathData[tile]
                 }
             }
         }
