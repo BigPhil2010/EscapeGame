@@ -35,3 +35,9 @@ html, body {
 .hidden {
     opacity: 0;
 }
+
+.player  {
+    height: 100%;
+    
+
+}
