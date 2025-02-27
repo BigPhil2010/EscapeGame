@@ -30,7 +30,7 @@ function loadLevel(data) {
             for (let y = 0; y < mapData.length;  y++){
                 for (let x = 0; x < mapData[y].length; x++){
                     let tile = mapData[y][x]
-                    document.getElementById(toString(y+"/"+x)).src = pathData[tile]
+                    document.getElementById("%{y}/%{x}").src = pathData[tile]
                     //console.log(y + "/" + x)
                 }
             }
