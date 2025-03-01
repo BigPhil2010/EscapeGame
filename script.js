@@ -31,6 +31,7 @@ function loadLevel() {
                 for (let x = 0; x < mapData[y].length; x++){
                     let tile = mapData[y][x]
                     document.getElementById(`${y + 1}/${x + 1}`).src = pathData[tile]
+                    console.log(`load ${y + 1}/${x + 1}`)
                 }
             }
         }
