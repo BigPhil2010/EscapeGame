@@ -25,13 +25,15 @@ html, body {
 .tile {
     height: 100%;
 }
-.gameTilemap {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    transition: opacity 0.5s;
-}
+
 .hidden {
     opacity: 0;
+}
+
+#imgLoaders > img {
+    display: none;
+}
+canvas{
+    height: 100%;
+    transition: opacity 0.5s;
 }
