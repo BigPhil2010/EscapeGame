@@ -26,7 +26,7 @@ const Map1 = [
 const Map2= [
     [
         "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_2226.png",
-        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_2238.png"
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_2238.png",
         "recources/kenney_tiny-town(compressed)/Tiles/tile_tile_2249.png"
     ],
     [
