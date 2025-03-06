@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EscapeGame</title>
     <script src="tilemap.js"></script>
     <script src="player.js"></script>
+    <script src="dialogmap.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="full_screen">
-        <a href="testPlayer/player.html"></a>
         <button onclick="toggleTilemap()">hide map</button>
-        <button onclick="drawTilemap(Map2)">load level</button>
+        <button onclick="walkLine(100,50,32,50,1.5)">player</button>
+        <button onclick="drawTilemap(Map1)">load level</button>
         <div class="game">
             <canvas id="backgroundTilemap"></canvas>
             <canvas id="player"></canvas>
+            <div id="dialog">
+                <div id="text">
+                    <p>hello</p>
+                </div>
+                <div id="buttons">
+                    <button id="btn1">1</button>
+                    <button id="btn2">2</button>
+                </div>
+            </div>
         </div>
     </div>
     <div id="imgLoaders">
@@ -381,18 +394,18 @@
         <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0090.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0090.png">
         
         <!--player-->
-        <img src="recources/Player/sprite_00.png" id="recources/Player/sprite_00.png">
-        <img src="recources/Player/sprite_01.png" id="recources/Player/sprite_01.png">
-        <img src="recources/Player/sprite_02.png" id="recources/Player/sprite_02.png">
-        <img src="recources/Player/sprite_03.png" id="recources/Player/sprite_03.png">
-        <img src="recources/Player/sprite_04.png" id="recources/Player/sprite_04.png">
-        <img src="recources/Player/sprite_05.png" id="recources/Player/sprite_05.png">
-        <img src="recources/Player/sprite_06.png" id="recources/Player/sprite_06.png">
-        <img src="recources/Player/sprite_07.png" id="recources/Player/sprite_07.png">
-        <img src="recources/Player/sprite_08.png" id="recources/Player/sprite_08.png">
-        <img src="recources/Player/sprite_09.png" id="recources/Player/sprite_09.png">
-        <img src="recources/Player/sprite_10.png" id="recources/Player/sprite_10.png">
-        <img src="recources/Player/sprite_11.png" id="recources/Player/sprite_11.png">
+        <img src="recources/Player/sprite_down_0.png" id="recources/Player/sprite_down_0.png">
+        <img src="recources/Player/sprite_down_1.png" id="recources/Player/sprite_down_1.png">
+        <img src="recources/Player/sprite_down_2.png" id="recources/Player/sprite_down_2.png">
+        <img src="recources/Player/sprite_left_0.png" id="recources/Player/sprite_left_0.png">
+        <img src="recources/Player/sprite_left_1.png" id="recources/Player/sprite_left_1.png">
+        <img src="recources/Player/sprite_left_2.png" id="recources/Player/sprite_left_2.png">
+        <img src="recources/Player/sprite_right_0.png" id="recources/Player/sprite_right_0.png">
+        <img src="recources/Player/sprite_right_1.png" id="recources/Player/sprite_right_1.png">
+        <img src="recources/Player/sprite_right_2.png" id="recources/Player/sprite_right_2.png">
+        <img src="recources/Player/sprite_up_0.png" id="recources/Player/sprite_up_0.png">
+        <img src="recources/Player/sprite_up_1.png" id="recources/Player/sprite_up_1.png">
+        <img src="recources/Player/sprite_up_2.png" id="recources/Player/sprite_up_2.png">
     </div>
 </body>
 </html>
