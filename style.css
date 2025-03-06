@@ -20,6 +20,7 @@ html, body {
     max-width: 133.33vh;
     max-height: 75vw;
     background-color: black;
+    position: relative;
 }
 
 .tile {
@@ -36,4 +37,30 @@ html, body {
 canvas{
     height: 100%;
     transition: opacity 0.5s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#dialog{
+    background-color: brown;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: "Noto Sans";
+}
+#text{
+    background-color: blue;
+    height: 20vh;
+    margin: 1vh;
+    text-align: center;
+    padding: 1vh;
+}
+#buttons{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#btn1, #btn2{
+    height: 10vh;
+    margin: 1vh;
 }
