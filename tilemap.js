@@ -4,7 +4,6 @@ const GAME_TILE = 16;
 
 const Map1 = [
     [
-< HEAD
         "recources/kenney_tiny-town (compressed)/Tiles/tile_0000.png",//0grass
         "recources/kenney_tiny-town (compressed)/Tiles/tile_0016.png",//1treebottom
         "recources/kenney_tiny-town (compressed)/Tiles/tile_0004.png",//2treetop
@@ -18,10 +17,7 @@ const Map1 = [
         "recources/kenney_tiny-town (compressed)/Tiles/tile_0069.png",//10fencebottomrightcorner
         "recources/kenney_tiny-town (compressed)/Tiles/tile_0067.png",//11fencebottomleftcorner
         "recources/kenney_tiny-town (compressed)/Tiles/tile_0068.png",//12fencedoor
-        "recources/kenney_tiny-town (compressed)/Tiles/tile_0057.png",//13fencedownwards
-
-
->
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0057.png",//13fencedownward
     ],
     [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
