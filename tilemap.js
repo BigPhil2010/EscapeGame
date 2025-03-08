@@ -10,14 +10,14 @@ const Map1 = [
         "recources/kenney_tiny-town (compressed)/Tiles/tile_0001.png",//3highgrass
         "recources/kenney_tiny-town (compressed)/Tiles/tile_0029.png",//4pilz
         "recources/kenney_tiny-town (compressed)/Tiles/tile_0017.png",//5unkraut
-        "recources/kenney_tiny-town (compressed)/Tiles/tile_0055.png",//6fenceupwards
-        "recources/kenney_tiny-town (compressed)/Tiles/tile_0043.png",//7fencetopleftcorner
-        "recources/kenney_tiny-town (compressed)/Tiles/tile_0045.png",//8fencetoprightcorner
-        "recources/kenney_tiny-town (compressed)/Tiles/tile_0044.png",//9fncehorizontal
-        "recources/kenney_tiny-town (compressed)/Tiles/tile_0069.png",//10fencebottomrightcorner
-        "recources/kenney_tiny-town (compressed)/Tiles/tile_0067.png",//11fencebottomleftcorner
-        "recources/kenney_tiny-town (compressed)/Tiles/tile_0068.png",//12fencedoor
-        "recources/kenney_tiny-town (compressed)/Tiles/tile_0057.png",//13fencedownward
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0056.png",//6fenceupwards
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0044.png",//7fencetopleftcorner
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0046.png",//8fencetoprightcorner
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0045.png",//9fncehorizontal
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0070.png",//10fencebottomrightcorner
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0068.png",//11fencebottomleftcorner
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0069.png",//12fencedoor
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0058.png",//13fencedownward
     ],
     [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
