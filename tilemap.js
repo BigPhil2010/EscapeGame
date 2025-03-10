@@ -29,7 +29,7 @@ const Map1 = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 109, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     ],
@@ -41,10 +41,10 @@ const Map1 = [
         [null, 2, null, null, null, null, null, null, null, 2, null, 2, null, null, null, null],
         [null, 1, null, 5, null, null, null, null, null, 1, null, 1, 5, null, 2, null],
         [7, 9, 9, 9, 9, 9, 9, 9, 9, 8, null, 2, null, null, 1, null],
-        [6, null, null, null, null, null, null, null, null, 13, null, 1, null, null, null, null],
-        [6, null, null, null, null, null, null, null, null, 13, null, 2, null, null, null, null],
-        [6, null, null, null, null, null, null, null, null, 13, null, 1, 2, null, 4, null],
-        [6, null, null, null, null, null, null, null, null, 13, null, null, 1, null, null, null],
+        [6, 48, 49, 50, 51, null, null, null, null, 13, null, 1, null, null, null, null],
+        [6, 60, 61, 62, 63, null, null, 57, null, 13, null, 2, null, null, null, null],
+        [6, 76, 77, 88, 79, null, 92, null, null, 13, null, 1, 2, null, 4, null],
+        [6, 76, 89, 77, 79, null, 104, null, null, 13, null, null, 1, null, null, null],
         [11, 9, 12, 9, 9, 9, 9, 9, 9, 10, null, null, null, null, null, null]
     ]
 ]
