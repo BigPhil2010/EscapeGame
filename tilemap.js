@@ -67,32 +67,51 @@ const Map1 = [
 ]
 const Map2= [
     [
-        "recources/kenney_tiny-town (compressed)/Tiles/tile_0004.png"
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0001.png",//0 grass
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0000.png",//1 green
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0002.png",//2 flower
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0043.png",//3 stein boden
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0016.png",//4 bottom tree
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0004.png",//5 top tree
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0123.png",//6 left gate
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0124.png",//7 right gate 
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0111.png",//8 top left gate 
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0112.png",//9 top right gate
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0120.png",//10 bottom left tower
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0108.png",//11 left tower
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0122.png",//12 bottom right tower
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0110.png",//13 right tower
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0104.png",//14 bottom well
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0092.png",//15 top well
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0121.png",//16 bottom tower
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0126.png",//17 wall
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0109.png",//18 grey floor
+        "recources/kenney_tiny-town (compressed)/Tiles/tile_0131.png",//19 bucket
 
     ],
     [
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 11, 13, 17, 0, 0, 17],
+        [0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 11, 13, 17, 0, 0, 17],
+        [0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 10, 12, 17, 0, 0, 17],
+        [0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 0],
+        [0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 3, 3, 0],
+        [0, 0, 1, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 3, 3, 0],
+        [0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 3, 3, 0],
+        [0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 3, 3, 0],
+        [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0],
+        [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 
     ]
     [
-        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
-        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, 5, null, 8, 9, null],
+        [null, null, null, null, null, null, null, null, null, null, null, 4, null, 6, 7, null],
+        [null, 5, null, null, null, null, null, null, null, null, null, null, null, 6, 7, null],
+        [null, 4, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, 15, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, 19, 14, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, 5, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, 4, null, null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
