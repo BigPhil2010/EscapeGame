@@ -102,7 +102,7 @@ const Map2= [
         [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0] 
-    ]
+    ],
     [
         [null, null, null, null, null, null, null, null, null, null, null, 5, null, 8, 9, null],
         [null, null, null, null, null, null, null, null, null, null, null, 4, null, 6, 7, null],
@@ -119,7 +119,49 @@ const Map2= [
     ]
 
 ]
+const Map3= [
+    [
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0048.png",//0 ground
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0040.png",//1 wall
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0028.png",//2 window
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0096.png",//3 statue 
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0046.png",//4 door left 
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0047.png",//5 door right 
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0042.png",//6 stone floor
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0089.png",//7 chest
+        "recources/kenney_tiny-town  (compressed)/Tiles/tile_0125.png",//8 wall stone 
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0049.png",//9 dust 
 
+    
+
+        [1, 1, 1, 2, 4, 5, 2, 8, 8, 2, 4, 5, 2, 1, 1, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+        [1, 0, 0, 9, 0, 0, 9, 0, 0, 0, 0, 9, 0, 0, 1, 1],
+        [1, 9, 0, 0, 0, 0, 9, 0, 9, 0, 0, 0, 0, 0, 1, 1],
+        [1, 0, 0, 0, 0, 9, 0, 0, 9, 0, 0, 0, 9, 0, 8, 8],
+        [1, 0, 0, 0, 0, 0, 0, 9, 0, 0, 9, 0, 0, 0, 8, 8],
+        [1, 0, 0, 9, 0, 0, 9, 0, 9, 0, 0, 0, 0, 0, 1, 1],
+        [1, 9, 0, 0, 0, 9, 0, 0, 9, 0, 9, 0, 9, 0, 1, 1],
+        [1, 0, 0, 9, 0, 0, 9, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+        [1, 9, 0, 9, 0, 0, 0, 0, 9, 0, 0, 9, 0, 9, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    ],
+    [
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, 7, 3, null, null, null, null, null, null, null, null, 3, 7, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+    ]
+]
 
 function drawTilemap(tilemap){
     //canvas settings
