@@ -204,6 +204,44 @@ const map4 = [
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
     ]
 ]
+const map5 = [
+    [
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0048.png",//0 floor
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0040.png",//1 wall
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0072.png",//2 desk
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0065.png",//3 gravestone 
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0046.png",//4 door left
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0047.png",//5 door right 
+    ],
+    [
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 4, 5, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+        [1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1]
+    ],
+    [
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, 4, 5, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, 2, 2, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, 2, 2, 3, null, null, null, null, null, null, 3, 2, 2, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, 2, 2, 3, null, null, null, null, null, null, 3, 2, 2, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+    ]
+]
 
 function drawTilemap(tilemap){
     //canvas settings
