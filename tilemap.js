@@ -132,6 +132,9 @@ const Map3= [
         "recources/kenney_tiny-town  (compressed)/Tiles/tile_0125.png",//8 wall stone 
         "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0049.png",//9 dust 
 
+    ],
+    [
+
     
 
         [1, 1, 1, 2, 4, 5, 2, 8, 8, 2, 4, 5, 2, 1, 1, 1],
@@ -158,6 +161,45 @@ const Map3= [
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+    ]
+]
+const map4 = [
+    [
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0040.png",//0 wall
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0048.png",//1 floor
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0041.png",//2 trap
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0096.png",//3 statue 
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0046.png",//4 door left
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0047.png",//5 door right 
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0019.png",//6 stone statue
+    ]
+    [
+        [0, 0, 0, 0, 0, 0, 0, 4, 5, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0]
+    ],
+    [
+        [null, null, null, null, null, null, 6, null, null, 6, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, 2, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, 2, 2, 2, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, 2, 2, 2, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, 2, 2, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, 2, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, 2, 2, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, 3, null, null, 3, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
     ]
