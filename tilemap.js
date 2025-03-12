@@ -47,7 +47,7 @@ async function sleep(seconds) {
 
 async function drawTilemap(tilemap){
     toggleTilemap()
-    await sleep(0.5)
+    await sleep(1)
 
     //canvas settings
     const BGcanvas = document.getElementById("backgroundTilemap");

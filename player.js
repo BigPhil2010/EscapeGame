@@ -8,6 +8,7 @@ async function sleep(seconds) {
 
 
 async function walkLine(start_x, start_y, end_x, end_y, time){//only straight
+    console.log(`Walk line : ${start_x} + ${start_y} + ${end_x} + ${end_y} + ${time}`)
     //canvas settings
     const canvas = document.getElementById("player");
     const ctx = canvas.getContext("2d");
@@ -19,24 +20,24 @@ async function walkLine(start_x, start_y, end_x, end_y, time){//only straight
     
     //find direction
     if (start_x == end_x){
-        //alert("Vertical")
+        console.log("Vertical")
         if (start_y < end_y){
-            //alert("Down")
+            console.log("Down")
             walkDirection = "down"
         }
         else{
-            //alert("Up")
+            console.log("Up")
             walkDirection = "up"
         }
     }
     else{
-        //alert("Horizontal")
+        console.log("Horizontal")
         if (start_x < end_x){
-            //alert("Right")
+            console.log("Right")
             walkDirection = "right"
         }
         else{
-            //alert("Left")
+            console.log("Left")
             walkDirection = "left"
         }
     }
@@ -79,6 +80,7 @@ async function walkLine(start_x, start_y, end_x, end_y, time){//only straight
             )
         }
         if (walkDirection == "up"){
+            console.log("walk")
             ctx.drawImage(
                 document.getElementById(sprites[current_sprite]),
                 start_x,
@@ -104,13 +106,20 @@ async function walkLine(start_x, start_y, end_x, end_y, time){//only straight
             }
         }
     }
+    if(time == 0){
+        ctx.drawImage(
+            document.getElementById(sprites[0]),
+            start_x,
+            start_y
+        )
+    }
 }
 async function walkArray(Array){
     const length = Array.length
     let currentPart = 0
     while (currentPart<length){
         walkLine(Array[currentPart][0], Array[currentPart][1], Array[currentPart][2], Array[currentPart][3], Array[currentPart][4])
-        await sleep(Array[currentPart][4]+(Array[currentPart][4]/2))
+            await sleep(Array[currentPart][4]+(Array[currentPart][4]/5))
         currentPart += 1
     }
 }
