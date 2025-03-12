@@ -405,3 +405,45 @@ const map8 = [
         [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
     ]
 ]
+const map0 = [
+    [
+       "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0048.png",//0 floor
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0040.png",//1 wall
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0089.png",//2 chest 
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0096.png",//3 statue
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0072.png",//4 table 
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0073.png",//5 stool
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0084.png",//6 professer
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0073.png",//7 stool
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0045.png",//8 door
+      
+    ],
+    [
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    ],
+    [
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, 8, null, null, null, null, null, null, null, null],
+        [null, 2, 3, null, null, null, null, null, null, null, null, null, null, 3, 2, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, 5, 5, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, 4, 4, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, 4, 4, null, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, 5, 5, 6, null, null, null, null, null, null, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null],
+        [null, 2, 3, null, null, null, null, null, null, null, null, null, null, 3, 2, null],
+        [null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null]
+    ]
+]
