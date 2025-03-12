@@ -75,6 +75,11 @@ canvas{
     color: white;
     font-size: 2vh;
     border: 0.2vh solid white;
+    }
+#btn1:hover, #btn2:hover, #overBtn:hover, #startBtn:hover {
+    background-color: #333; /* Hellere Farbe */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 #startOverlay{
     color: white;
