@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!--linked font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EscapeGame</title>
+
+    <!--linked scripts& files-->
     <script src="tilemap.js"></script>
     <script src="player.js"></script>
-    <script src="dialog.js"></script>
+    <script src="dialog.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="full_screen">
-        <button onclick="toggleTilemap()">hide map</button>
-        <button onclick="walkLine(0,0,32,0,1.5)">player</button>
-        <button onclick="drawTilemap(Map1)">load level</button>
-        <button onclick="hideDialog()">hide dialog</button>
+
+    <div class="full_screen" id="full_screen">
         <div class="game">
+
             <canvas id="backgroundTilemap"></canvas>
             <canvas id="foregroundTilemap"></canvas>
             <canvas id="player"></canvas>
-            <div id="dialog">
+
+            <div id="dialog" class="hidden">
                 <div id="text">
-                    <p>hello</p>
+                    <p id="topText">hello</p>
                 </div>
                 <div id="buttons">
                     <button id="btn1" onclick="btn1()">1</button>
                     <button id="btn2" onclick="btn2()">2</button>
                 </div>
             </div>
+
+            <div id="startOverlay">
+                <span id="gameTitle">Der Schatz der Ruine</span>
+                <span id="gameSubtitle">The Game</span>
+                <button id="startBtn">
+                    <span id="startSpan">click to start</span>
+                </button>
+            </div>
+
+            <div id="over" class="hidden">
+                <span id="bigOver">Schade</span>
+                <button id="overBtn">
+                    <span id="smallOver">Versuche es noch einmal</span>
+                </button>
+            </div>
+
+            <div id="end" class="hidden">
+                <span id="bigEnd">Ende</span>
+                <span id="smallEnd">Danke für's Spielen</span>
+            </div>
         </div>
     </div>
+
     <div id="imgLoaders">
         <!--dungeon-->
         <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0000.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0000.png">

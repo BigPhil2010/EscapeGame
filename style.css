@@ -42,25 +42,126 @@ canvas{
     left: 0;
 }
 #dialog{
-    background-color: brown;
+    /*background-color: brown;*/
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    font-family: "Noto Sans";
+    font-family: "Jersey 10";
+    font-size: 3vh;
+    color: white;
+    transition: opacity 0.5s;
 }
 #text{
-    background-color: blue;
-    height: 20vh;
+    background-color: #1e1e1e;
+    height: 13 vh;
     margin: 1vh;
     text-align: center;
     padding: 1vh;
+    border-radius: 1vh;
+    border: 0.2vh solid white;
 }
 #buttons{
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
 #btn1, #btn2{
-    height: 10vh;
+    background-color: #1e1e1e;
+    border: 0;
+    height: 7vh;
     margin: 1vh;
+    border-radius: 1vh;
+    font-family: "Jersey 10";
+    color: white;
+    font-size: 2vh;
+    border: 0.2vh solid white;
+}
+#startOverlay{
+    color: white;
+    font-family: "Jersey 10";
+    transition: opacity 0.5s;
+}
+#startSpan{
+    position: absolute;
+    text-align: center;
+    font-size: 7vh;
+    color: yellow;
+    bottom: 3vh;
+    left: 0;
+    right: 0;
+    -webkit-text-stroke-width: 0.3vh;
+    -webkit-text-stroke-color: black;
+    animation: blink;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite
+}
+#startBtn{
+    font-family: "Jersey 10";
+    background-color: transparent;
+    border: none;
+}
+@keyframes blink {
+    0%{opacity: 1;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
+#gameTitle{
+    color: white;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5vh;
+    text-align: center;
+    font-size: 10vh;
+    -webkit-text-stroke-width: 0.3vh;
+    -webkit-text-stroke-color: black;
+}
+#gameSubtitle{
+    color: white;
+    position: absolute;
+    left: 50%;
+    right: 0;
+    top: 13vh;
+    text-align: center;
+    font-size: 7vh;
+    rotate: -8deg;
+    -webkit-text-stroke-width: 0.3vh;
+    -webkit-text-stroke-color: black;
+}
+#end{
+    transition: opacity 0.5s;
+}
+#player{
+    transition: opacity 0.5s;
+}
+#end, #over{
+    font-family: "Jersey 10";
+    color: white;
+    text-align: center;
+}
+#bigEnd, #bigOver{
+    font-size: 45vh;
+    position: absolute;
+    top: 5vh;
+    left: 0;
+    right: 0;
+}
+#smallEnd{
+    font-size: 10vh;
+    position: absolute;
+    bottom: 40vh;
+    left: 0;
+    right: 0;
+}
+#overBtn{
+    color: white;
+    font-family: "Jersey 10";
+    background: transparent;
+    border: none;
+    position: absolute;
+    bottom: 40vh;
+    left: 0;
+    right: 0;
+    height: 10vh;
+    font-size: 10vh;
 }

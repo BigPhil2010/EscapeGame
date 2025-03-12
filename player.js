@@ -16,7 +16,7 @@ async function walkLine(start_x, start_y, end_x, end_y, time){//only straight
     ctx.imageSmoothingEnabled = false;
 
     let walkDirection = ""
-
+    
     //find direction
     if (start_x == end_x){
         //alert("Vertical")
@@ -60,7 +60,7 @@ async function walkLine(start_x, start_y, end_x, end_y, time){//only straight
         if (walkDirection == "right"){
             ctx.drawImage(
                 document.getElementById(sprites[current_sprite]),
-                start_x+(playedFrames+1)*distance_frame,
+                start_x+(playedFrames+1)*distance_frame*-1,
                 start_y
             )
         }
@@ -75,7 +75,7 @@ async function walkLine(start_x, start_y, end_x, end_y, time){//only straight
             ctx.drawImage(
                 document.getElementById(sprites[current_sprite]),
                 start_x,
-                start_y+(playedFrames+1)*distance_frame
+                start_y+(playedFrames+1)*distance_frame*-1
             )
         }
         if (walkDirection == "up"){
@@ -103,5 +103,14 @@ async function walkLine(start_x, start_y, end_x, end_y, time){//only straight
                 }
             }
         }
+    }
+}
+async function walkArray(Array){
+    const length = Array.length
+    let currentPart = 0
+    while (currentPart<length){
+        walkLine(Array[currentPart][0], Array[currentPart][1], Array[currentPart][2], Array[currentPart][3], Array[currentPart][4])
+        await sleep(Array[currentPart][4]+(Array[currentPart][4]/2))
+        currentPart += 1
     }
 }
