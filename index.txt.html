@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EscapeGame</title>
+    <script src="tilemap.js"></script>
+    <script src="player.js"></script>
+    <script src="dialogmap.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="full_screen">
+        <button onclick="toggleTilemap()">hide map</button>
+        <button onclick="walkLine(100,50,32,50,1.5)">player</button>
+        <button onclick="drawTilemap(Map1)">load level</button>
+        <div class="game">
+            <canvas id="backgroundTilemap"></canvas>
+            <canvas id="player"></canvas>
+            <div id="dialog">
+                <div id="text">
+                    <p>hello</p>
+                </div>
+                <div id="buttons">
+                    <button id="btn1">1</button>
+                    <button id="btn2">2</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="imgLoaders">
+        <!--dungeon-->
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0000.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0000.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0001.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0001.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0002.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0002.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0003.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0003.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0004.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0004.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0005.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0005.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0006.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0006.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0007.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0007.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0008.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0008.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0009.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0009.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0010.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0010.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0011.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0011.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0012.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0012.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0013.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0013.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0014.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0014.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0015.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0015.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0016.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0016.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0017.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0017.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0018.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0018.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0019.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0019.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0020.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0020.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0021.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0021.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0022.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0022.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0023.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0023.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0024.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0024.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0025.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0025.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0026.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0026.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0027.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0027.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0028.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0028.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0029.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0029.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0030.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0030.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0031.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0031.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0032.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0032.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0033.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0033.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0034.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0034.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0035.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0035.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0036.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0036.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0037.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0037.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0038.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0038.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0039.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0039.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0040.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0040.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0041.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0041.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0042.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0042.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0043.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0043.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0044.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0044.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0045.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0045.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0046.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0046.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0047.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0047.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0048.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0048.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0049.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0049.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0050.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0050.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0051.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0051.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0052.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0052.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0053.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0053.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0054.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0054.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0055.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0055.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0056.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0056.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0057.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0057.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0058.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0058.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0059.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0059.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0060.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0060.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0061.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0061.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0062.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0062.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0063.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0063.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0064.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0064.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0065.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0065.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0066.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0066.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0067.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0067.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0068.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0068.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0069.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0069.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0070.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0070.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0071.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0071.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0072.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0072.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0073.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0073.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0074.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0074.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0075.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0075.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0076.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0076.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0077.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0077.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0078.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0078.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0079.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0079.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0080.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0080.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0081.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0081.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0082.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0082.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0083.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0083.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0084.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0084.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0085.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0085.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0086.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0086.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0087.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0087.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0088.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0088.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0089.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0089.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0090.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0090.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0091.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0091.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0092.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0092.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0093.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0093.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0094.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0094.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0095.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0095.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0096.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0096.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0097.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0097.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0098.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0098.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0099.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0099.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0100.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0100.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0101.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0101.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0102.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0102.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0103.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0103.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0104.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0104.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0105.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0105.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0106.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0106.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0107.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0107.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0108.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0108.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0109.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0109.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0110.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0110.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0111.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0111.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0112.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0112.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0113.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0113.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0114.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0114.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0115.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0115.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0116.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0116.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0117.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0117.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0118.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0118.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0119.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0119.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0120.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0120.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0121.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0121.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0122.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0122.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0123.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0123.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0124.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0124.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0125.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0125.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0126.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0126.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0127.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0127.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0128.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0128.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0129.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0129.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0130.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0130.png">
+        <img src="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0131.png" id="recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0131.png">
+        
+        <!--Town-->
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0000.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0000.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0001.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0001.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0002.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0002.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0003.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0003.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0004.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0004.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0005.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0005.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0006.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0006.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0007.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0007.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0008.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0008.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0009.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0009.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0010.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0010.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0011.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0011.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0012.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0012.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0013.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0013.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0014.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0014.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0015.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0015.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0016.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0016.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0017.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0017.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0018.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0018.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0019.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0019.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0020.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0020.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0021.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0021.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0022.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0022.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0023.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0023.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0024.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0024.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0025.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0025.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0026.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0026.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0027.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0027.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0028.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0028.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0029.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0029.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0030.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0030.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0031.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0031.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0032.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0032.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0033.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0033.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0034.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0034.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0035.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0035.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0036.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0036.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0037.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0037.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0038.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0038.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0039.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0039.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0040.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0040.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0041.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0041.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0042.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0042.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0043.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0043.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0044.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0044.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0045.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0045.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0046.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0046.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0047.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0047.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0048.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0048.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0049.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0049.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0050.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0050.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0051.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0051.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0052.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0052.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0053.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0053.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0054.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0054.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0055.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0055.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0056.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0056.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0057.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0057.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0058.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0058.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0059.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0059.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0060.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0060.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0061.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0061.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0062.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0062.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0063.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0063.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0064.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0064.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0065.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0065.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0066.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0066.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0067.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0067.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0068.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0068.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0069.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0069.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0070.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0070.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0071.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0071.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0072.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0072.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0073.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0073.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0074.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0074.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0075.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0075.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0076.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0076.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0077.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0077.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0078.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0078.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0079.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0079.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0080.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0080.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0081.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0081.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0082.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0082.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0083.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0083.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0084.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0084.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0085.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0085.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0086.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0086.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0087.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0087.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0088.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0088.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0089.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0089.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0090.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0090.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0091.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0091.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0092.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0092.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0093.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0093.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0094.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0094.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0095.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0095.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0096.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0096.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0097.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0097.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0098.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0098.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0099.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0099.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0100.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0100.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0101.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0101.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0102.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0102.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0103.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0103.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0104.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0104.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0105.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0105.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0106.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0106.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0107.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0107.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0108.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0108.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0109.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0109.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0110.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0110.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0111.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0111.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0112.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0112.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0113.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0113.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0114.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0114.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0115.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0115.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0116.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0116.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0117.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0117.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0118.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0118.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0119.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0119.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0120.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0120.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0121.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0121.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0122.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0122.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0123.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0123.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0124.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0124.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0125.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0125.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0126.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0126.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0127.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0127.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0128.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0128.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0129.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0129.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0130.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0130.png">
+        <img src="recources/kenney_tiny-town (compressed)/Tiles/tile_0131.png" id="recources/kenney_tiny-town (compressed)/Tiles/tile_0131.png">
+
+        <!--ui_pack-->
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0000.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0000.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0001.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0001.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0002.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0002.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0003.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0003.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0004.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0004.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0005.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0005.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0006.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0006.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0007.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0007.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0008.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0008.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0009.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0009.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0010.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0010.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0011.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0011.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0012.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0012.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0013.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0013.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0014.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0014.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0015.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0015.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0016.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0016.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0017.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0017.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0018.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0018.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0019.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0019.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0020.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0020.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0021.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0021.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0022.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0022.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0023.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0023.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0024.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0024.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0025.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0025.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0026.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0026.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0027.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0027.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0028.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0028.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0029.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0029.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0030.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0030.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0031.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0031.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0032.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0032.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0033.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0033.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0034.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0034.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0035.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0035.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0036.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0036.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0037.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0037.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0038.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0038.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0039.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0039.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0040.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0040.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0041.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0041.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0042.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0042.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0043.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0043.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0044.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0044.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0045.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0045.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0046.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0046.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0047.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0047.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0048.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0048.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0049.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0049.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0050.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0050.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0051.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0051.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0052.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0052.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0053.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0053.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0054.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0054.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0055.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0055.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0056.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0056.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0057.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0057.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0058.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0058.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0059.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0059.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0060.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0060.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0061.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0061.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0062.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0062.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0063.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0063.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0064.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0064.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0065.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0065.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0066.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0066.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0067.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0067.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0068.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0068.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0069.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0069.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0070.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0070.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0071.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0071.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0072.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0072.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0073.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0073.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0074.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0074.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0075.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0075.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0076.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0076.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0077.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0077.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0078.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0078.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0079.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0079.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0080.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0080.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0081.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0081.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0082.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0082.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0083.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0083.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0084.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0084.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0085.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0085.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0086.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0086.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0087.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0087.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0088.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0088.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0089.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0089.png">
+        <img src="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0090.png" id="recources/kenney_ui-pack-pixel-adventure(compressed)/Tiles/tile_0090.png">
+        
+        <!--player-->
+        <img src="recources/Player/sprite_down_0.png" id="recources/Player/sprite_down_0.png">
+        <img src="recources/Player/sprite_down_1.png" id="recources/Player/sprite_down_1.png">
+        <img src="recources/Player/sprite_down_2.png" id="recources/Player/sprite_down_2.png">
+        <img src="recources/Player/sprite_left_0.png" id="recources/Player/sprite_left_0.png">
+        <img src="recources/Player/sprite_left_1.png" id="recources/Player/sprite_left_1.png">
+        <img src="recources/Player/sprite_left_2.png" id="recources/Player/sprite_left_2.png">
+        <img src="recources/Player/sprite_right_0.png" id="recources/Player/sprite_right_0.png">
+        <img src="recources/Player/sprite_right_1.png" id="recources/Player/sprite_right_1.png">
+        <img src="recources/Player/sprite_right_2.png" id="recources/Player/sprite_right_2.png">
+        <img src="recources/Player/sprite_up_0.png" id="recources/Player/sprite_up_0.png">
+        <img src="recources/Player/sprite_up_1.png" id="recources/Player/sprite_up_1.png">
+        <img src="recources/Player/sprite_up_2.png" id="recources/Player/sprite_up_2.png">
+    </div>
+</body>
+</html>

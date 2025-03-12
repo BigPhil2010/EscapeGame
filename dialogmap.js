@@ -1,6 +1,6 @@
-const GAME_WIDTH = 256;
-const GAME_HEIGHT = 192;
-const GAME_TILE = 16;
+const DIALOG_WIDTH = 256;
+const DIALOG_HEIGHT = 192;
+const DIALOG_TILE = 16;
 
 const Map1 = [
     [
@@ -28,8 +28,8 @@ function drawTilemap(tilemap){
     //canvas settings
     const canvas = document.getElementById("backgroundTilemap");
     const ctx = canvas.getContext("2d");
-    canvas.width = GAME_WIDTH;
-    canvas.height = GAME_HEIGHT;
+    canvas.width = DIALOG_WIDTH;
+    canvas.height = DIALOG_HEIGHT;
     ctx.imageSmoothingEnabled = false;
 
     //read & draw tiles
@@ -42,14 +42,9 @@ function drawTilemap(tilemap){
 
             ctx.drawImage(
                 TILE_IMAGE,
-                x*GAME_TILE,
-                y*GAME_TILE
+                x*DIALOG_TILE,
+                y*DIALOG_TILE
             )
         }
     }
-}
-
-
-function toggleTilemap() {
-    document.getElementById("backgroundTilemap").classList.toggle("hidden")
 }

@@ -60,7 +60,7 @@ async function walkLine(start_x, start_y, end_x, end_y, time){//only straight
         if (walkDirection == "right"){
             ctx.drawImage(
                 document.getElementById(sprites[current_sprite]),
-                start_x+(playedFrames+1)*distance_frame*-1,
+                start_x+(playedFrames+1)*distance_frame,
                 start_y
             )
         }
@@ -75,7 +75,7 @@ async function walkLine(start_x, start_y, end_x, end_y, time){//only straight
             ctx.drawImage(
                 document.getElementById(sprites[current_sprite]),
                 start_x,
-                start_y+(playedFrames+1)*distance_frame*-1
+                start_y+(playedFrames+1)*distance_frame
             )
         }
         if (walkDirection == "up"){
