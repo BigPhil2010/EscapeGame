@@ -371,8 +371,8 @@ const map8 = [
         "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0075.png",//3 bottom crates
         "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0063.png",//4 top crates
         "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0096.png",//5 statue
-        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0092.png",//2 chest
-        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0092.png",//7 chest half open 
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0090.png",//6 chest
+        "recources/kenney_tiny-dungeon (compressed)/Tiles/tile_0091.png",//7 chest half open 
        
         
     ]
